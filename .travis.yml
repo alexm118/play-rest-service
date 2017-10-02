@@ -1,3 +1,10 @@
 language: scala
 scala:
-  - 2.12.2
+- 2.12.2
+deploy:
+  provider: heroku
+  api_key:
+    secure: mVU91g2fChgh8UoU1VjdBfZlT3xRKI+0TV+k6Rbv1Y7JSPSLTTs55vQwf2yMLolHfthIRKv81Qv6/pieYWSUhw+Sj97YEPu0N/L5qS8afa17uv//+XB4X/MkShMbY7gv5AeRNpZfkH9o3NgvEwBluopJY8X6ubVLo/0+jb9GKXpQPY/4tfvOOwEE+Obd2HctbAAgL94aeIJXT43gCXNuQt0KKHFNbH+KBNUOARv4MvgoCjeV4PYrbm1keNrx8sSoe1WgOfWNYJ6zFPoXXNIUZaNj6wNBKm5SLk6LakybcvTHEMwDVqRFGP88MzbaPQIt0QXI0m4mDXWnHClGX0p/csjCQj+LxuoXhnctU97qCrmLsEshCVEwvH6kweILR3/ivjNPGBtFoyclFaGrvsOp883paRV+ayBzWb2agS13fDWuOwLS8EcxY/+SEWmaRWsxyTKVZKxBONLZHfADN6Mx0FqvXPzFJmvz7RM615tNaHCH2k2Vnb4/DPyjXWm4H4TX/4CZjdE12Ot+z1aMvSEiiYe+Ove02MwyZQFsZ4/APfQN8IIRfXos9hKB7S/q3fAbTNhocoFrMtwnkaNNKcLiwJIVt/LtHEXJb/gOr4/po2CS97Yh6IKmcdQutUQbnsaRI4pRmwPXKDcHNdHtR4vq1KZQF39ndCJxBavqkZJeqVA=
+  app: play-rest-service
+  on:
+    repo: alexm118/play-rest-service
