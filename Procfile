@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/play-rest-service -Dhttp.port=9000
+web: target/universal/stage/bin/play-rest-service -Dhttp.port=${PORT}
