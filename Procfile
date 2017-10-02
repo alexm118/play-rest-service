@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/myapp -Dhttps.port=9000 -Dhttp.port=disabled -Dhttps.keyStore=conf/generated.keystore
+web: target/universal/stage/bin/play-rest-service -Dhttp.port=9000
