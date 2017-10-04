@@ -11,7 +11,7 @@ libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.0" % Test
 
 coverageEnabled := true
-coverageMinimum := 80
+coverageMinimum := 50
 coverageFailOnMinimum := false
 
 // Adds additional packages into Twirl
