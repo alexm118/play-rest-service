@@ -1,6 +1,10 @@
 language: scala
 scala:
 - 2.12.2
+script:
+  - sbt clean coverage test coverageReport &&
+after_success:
+  - sbt coveralls
 deploy:
   provider: heroku
   api_key:
