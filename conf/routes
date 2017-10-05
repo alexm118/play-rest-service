@@ -6,5 +6,38 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+### NoDocs ###
+GET   /docs/swagger-ui/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
+
+### NoDocs ###
+GET   /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
+
+###
+#  summary: Test Endpoint
+#  parameters:
+#    - name: body
+#      schema:
+#        $ref: '#/definitions/models.User'
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/models.User'
+###
+POST   /user                      controllers.UserController.saveUser
+
+###
+#  summary: Test Endpoint
+#  responses:
+#    200:
+#      description: success
+###
+GET     /users                      controllers.UserController.getUsers
+
+###
+#  summary: Test Endpoint
+#  responses:
+#    200:
+#      description: success
+###
+GET     /createUsers                      controllers.UserController.createUserTable
