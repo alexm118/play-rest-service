@@ -14,7 +14,7 @@ libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 libraryDependencies += "org.webjars" % "swagger-ui" % "2.2.0"
 
 coverageEnabled := true
-coverageMinimum := 50
+coverageMinimum := 10
 coverageFailOnMinimum := false
 
 swaggerDomainNameSpaces := Seq("models")
