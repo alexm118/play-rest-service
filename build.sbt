@@ -14,7 +14,6 @@ libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "3.0.0"
 libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 libraryDependencies += "org.webjars" % "swagger-ui" % "2.2.0"
 
-coverageEnabled := true
 coverageMinimum := 10
 coverageFailOnMinimum := false
 
