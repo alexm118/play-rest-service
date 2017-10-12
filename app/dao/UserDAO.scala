@@ -23,9 +23,8 @@ class UserDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
 
   def insert(user: User): Future[Unit] = db.run(Users += user).map{_ => ()}
 
-  private class UserTable(tag: Tag) extends Table[User](tag, "USER") {
-
-    def username = column[String]("USERNAME", O.PrimaryKey)
+  private class UserTable(tag: Tag) extends Table[User](tag, "USERS") {
+    def username = column[String]("USERNAME")
     def password = column[String]("PASSWORD")
     def firstName = column[String]("FIRSTNAME")
     def lastName = column[String]("LASTNAME")

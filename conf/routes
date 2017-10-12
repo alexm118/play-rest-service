@@ -4,6 +4,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
+### NoDocs ###
 GET     /                           controllers.HomeController.index
 
 ### NoDocs ###
