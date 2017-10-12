@@ -3,8 +3,8 @@
 CREATE TABLE "USERS" (
     username VARCHAR NOT NULL PRIMARY KEY,
     password VARCHAR NOT NULL,
-    firstName VARCHAR NOT NULL,
-    lastName VARCHAR NOT NULL,
+    firstname VARCHAR NOT NULL,
+    lastname VARCHAR NOT NULL,
     email VARCHAR NOT NULL
 );
 

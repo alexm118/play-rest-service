@@ -24,13 +24,13 @@ class UserDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
   def insert(user: User): Future[Unit] = db.run(Users += user).map{_ => ()}
 
   private class UserTable(tag: Tag) extends Table[User](tag, "USERS") {
-    def username = column[String]("USERNAME")
-    def password = column[String]("PASSWORD")
-    def firstName = column[String]("FIRSTNAME")
-    def lastName = column[String]("LASTNAME")
-    def email = column[String]("EMAIL")
+    def username = column[String]("username")
+    def password = column[String]("password")
+    def firstname = column[String]("firstname")
+    def lastname = column[String]("lastname")
+    def email = column[String]("email")
 
-    def * = (username, password, firstName, lastName, email) <> (User.tupled, User.unapply)
+    def * = (username, password, firstname, lastname, email) <> (User.tupled, User.unapply)
   }
 
 }
