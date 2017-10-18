@@ -5,7 +5,7 @@
 
 # An example controller showing a sample home page
 ### NoDocs ###
-GET     /                           controllers.HomeController.index
+GET   /                             controllers.Default.redirect(to = "/docs/swagger-ui/index.html?url=/assets/swagger.json")
 
 ### NoDocs ###
 GET   /docs/swagger-ui/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
@@ -14,7 +14,7 @@ GET   /docs/swagger-ui/*file        controllers.Assets.at(path:String="/public/l
 GET   /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
 
 ###
-#  summary: Test Endpoint
+#  summary: Creates a new user
 #  parameters:
 #    - name: body
 #      schema:
@@ -28,7 +28,7 @@ GET   /assets/*file                 controllers.Assets.versioned(path="/public",
 POST   /user                      controllers.UserController.saveUser
 
 ###
-#  summary: Test Endpoint
+#  summary: Returns all users
 #  responses:
 #    200:
 #      description: success
@@ -36,9 +36,13 @@ POST   /user                      controllers.UserController.saveUser
 GET     /users                      controllers.UserController.getUsers
 
 ###
-#  summary: Test Endpoint
+#  summary: Returns a boolean if username/password combo is found
+#  parameters:
+#    - name: body
+#      schema:
+#        $ref: '#/definitions/models.Login'
 #  responses:
 #    200:
 #      description: success
 ###
-GET     /createUsers                      controllers.UserController.createUserTable
+POST     /login                      controllers.UserController.login

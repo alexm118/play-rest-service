@@ -3,8 +3,8 @@ package controllers
 import javax.inject.Singleton
 
 import com.google.inject.Inject
-import models.User
-import play.api.libs.json.{JsError, Json}
+import models.{Login, User}
+import play.api.libs.json.{JsError, JsSuccess, Json}
 import play.api.mvc._
 import dao.UserDAO
 
@@ -39,9 +39,23 @@ class UserController @Inject()(cc: ControllerComponents, userDAO: UserDAO)
     }
   }
 
-  def createUserTable = Action {
-    userDAO.create()
-    Ok(Json.toJson("Done Creating Schema"))
+  def login = Action.async(parse.json) { implicit request =>
+    val loginResult = request.body.validate[Login]
+    loginResult match {
+      case login: JsSuccess[Login] => {
+        userDAO.login(login.get).map {
+          user => {
+            if (user.nonEmpty) {
+              Ok(Json.toJson(user))
+            } else {
+              BadRequest("Authentication Failed")
+            }
+          }
+        }
+      }
+      case error: JsError => {
+        Future(BadRequest(JsError.toJson(error)))
+      }
+    }
   }
-
 }
