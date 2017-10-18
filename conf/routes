@@ -25,7 +25,7 @@ GET   /assets/*file                 controllers.Assets.versioned(path="/public",
 #      schema:
 #        $ref: '#/definitions/models.User'
 ###
-POST   /user                      controllers.UserController.saveUser
+POST   /api/signup                      controllers.UserController.saveUser
 
 ###
 #  summary: Returns all users
@@ -33,7 +33,7 @@ POST   /user                      controllers.UserController.saveUser
 #    200:
 #      description: success
 ###
-GET     /users                      controllers.UserController.getUsers
+GET     /api/users                      controllers.UserController.getUsers
 
 ###
 #  summary: Returns a boolean if username/password combo is found
@@ -45,4 +45,4 @@ GET     /users                      controllers.UserController.getUsers
 #    200:
 #      description: success
 ###
-POST     /login                      controllers.UserController.login
+POST     /api/login                      controllers.UserController.login
