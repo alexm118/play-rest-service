@@ -46,3 +46,37 @@ GET     /api/users                      controllers.UserController.getUsers
 #      description: success
 ###
 POST     /api/login                      controllers.UserController.login
+
+###
+#  summary: Returns all Tasks in database
+#  responses:
+#    200:
+#      description: success
+#    400:
+#      description: failure
+###
+GET /api/tasks/all                      controllers.TaskController.getAllTasks
+
+###
+#  summary: Creates a new task for the given user
+#  parameters:
+#    - name: body
+#      schema:
+#        $ref: '#/definitions/models.Task'
+#  responses:
+#    200:
+#      description: success
+#    400:
+#      description: failure
+###
+POST /api/tasks/create                  controllers.TaskController.createTask
+
+###
+#  summary: Creates a new task for the given user
+#  responses:
+#    200:
+#      description: success
+#    400:
+#      description: failure
+###
+GET /api/tasks/:username                controllers.TaskController.getTaskForUser(username: String)
