@@ -80,3 +80,9 @@ POST /api/tasks/create                  controllers.TaskController.createTask
 #      description: failure
 ###
 GET /api/tasks/:username                controllers.TaskController.getTaskForUser(username: String)
+
+### NoDocs ###
+GET /socket                                 controllers.WebSocketController.socket
+
+### NoDos ###
+GET /stream                             controllers.ServerSentEventController.taskStream()
